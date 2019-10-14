@@ -16,6 +16,9 @@ import org.restlet.resource.ServerResource;
 import java.io.IOException;
 
 public class EventListenerResource extends ServerResource {
+    private static final String ANSI_GREEN = "\u001B[32m";
+    private static final String ANSI_RESET = "\u001B[0m";
+
 
     private String executeSubscribe(String iid, String oid, String eid) throws IOException {
         //send POST to agent: /objects/{oid}/events/{eid}
@@ -75,6 +78,7 @@ public class EventListenerResource extends ServerResource {
         // do sth with received data
         // anomaly detection
         // data anomalous? send alarm
+        System.out.println(ANSI_GREEN + out.toString() + ANSI_RESET);
         return out.toString();
     }
 

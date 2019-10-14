@@ -6,8 +6,8 @@ import org.restlet.resource.Get;
 import org.restlet.resource.Put;
 import org.restlet.resource.ServerResource;
 
-public class GetSetPropertyResource extends ServerResource {
-    public GetSetPropertyResource() {
+public class PropertyResource extends ServerResource {
+    public PropertyResource() {
     }
 
     @Get("json")

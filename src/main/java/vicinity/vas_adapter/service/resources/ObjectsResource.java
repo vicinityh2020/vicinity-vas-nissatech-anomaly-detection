@@ -10,7 +10,7 @@ public class ObjectsResource extends ServerResource {
     public ObjectsResource() {
     }
 
-    public static String file2string(String path) throws Exception {
+    private static String file2string(String path) throws Exception {
         try {
             return (new Scanner(new File(path))).useDelimiter("\\Z").next();
         } catch (Exception var2) {
@@ -19,7 +19,7 @@ public class ObjectsResource extends ServerResource {
         }
     }
 
-    public static String getObjects() {
+    private static String getObjectsFromFile() {
         try {
             System.out.println("getting objects");
             System.out.println("GETTING OBJECTS FROM: " + System.getProperty("objects.file"));
@@ -32,7 +32,7 @@ public class ObjectsResource extends ServerResource {
     }
 
     @Get("json")
-    public String getPropertyValue() {
-        return getObjects();
+    public String getObjects() {
+        return getObjectsFromFile();
     }
 }
